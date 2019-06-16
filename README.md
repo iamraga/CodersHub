@@ -1,2 +1,0 @@
-# DevCollaborator
-Developers collaborate
