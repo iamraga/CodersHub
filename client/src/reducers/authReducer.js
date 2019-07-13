@@ -2,7 +2,7 @@ import { SET_CURRENT_USER } from '../actions/types.jsx';
 import isEmpty from '../validation/isempty';
 
 const initialState = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     user: {}
 }
 
