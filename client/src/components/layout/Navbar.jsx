@@ -17,6 +17,9 @@ class Navbar extends Component {
         const {isAuthenticated} = this.props.auth;
         const authLinks = (
             <ul className="navbar-nav ml-auto">
+                <li className="nav-item mr-3">
+                    <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                </li>
                 <li className="nav-item">
                     <button onClick={this.onLogoutClick.bind(this)} className="btn btn-m btn-info mr-2">Logout</button>
                 </li>
