@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import authReducer from './authReducer.js';
-import errorReducer from './errorReducer.js';
+import authReducer from './authReducer.jsx';
+import errorReducer from './errorReducer.jsx';
 import profileReducer from './profileReducer';
 
 export default combineReducers({
