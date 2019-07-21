@@ -23,7 +23,7 @@ class Experience extends Component {
                     {exp.to === null ? (' To date') : (<Moment format="YYYY/MM/DD">{exp.to}</Moment>)}
                 </td>
                 <td>
-                    <button onClick={this.onDeleteClick.bind(this, exp._id)} className="btn btn-danger">Delete</button>
+                    <button style={{'fontSize':'13px'}} onClick={this.onDeleteClick.bind(this, exp._id)} className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         ))
@@ -31,7 +31,7 @@ class Experience extends Component {
             <div className="text-center">
                 <h4 className="mb-4 text-left">Experience Credentials</h4>
                 {isExperienceAvailable ? (
-                    <table className="table">
+                    <table className="table text-left">
                         <thead>
                             <th>Company</th>
                             <th>Title</th>

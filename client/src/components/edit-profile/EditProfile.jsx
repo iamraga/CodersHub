@@ -167,6 +167,9 @@ class CreateProfile extends Component {
             { label: 'Student or Learning', value: 'Student or Learning' },
             { label: 'Instructor or Teacher', value: 'Instructor or Teacher' },
             { label: 'Intern', value: 'Intern' },
+            { label: 'Full Stack Developer', value: 'Full Stack Developer' },
+            { label: 'Marketing Analyst', value: 'Marketing Analyst' },
+            { label: 'Technical Writer', value: 'Technical Writer' },
             { label: 'Others', value: 'Others' },
         ];
         return (

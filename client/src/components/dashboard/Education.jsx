@@ -23,7 +23,7 @@ class Education extends Component {
                     {edu.to === null ? (' To date') : (<Moment format="YYYY/MM/DD">{edu.to}</Moment>)}
                 </td>
                 <td>
-                    <button onClick={this.onDeleteClick.bind(this, edu._id)} className="btn btn-danger">Delete</button>
+                    <button style={{'fontSize':'13px'}} onClick={this.onDeleteClick.bind(this, edu._id)} className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         ))
@@ -31,16 +31,14 @@ class Education extends Component {
             <div className="text-center">
                 <h4 className="mb-4 text-left">Education Credentials</h4>
                 {isEducationAvailable ? (
-                    <table className="table">
+                    <table className="table text-left">
                         <thead>
                             <th>School</th>
                             <th>Degree</th>
                             <th>Years</th>
                             <th></th>
                         </thead>
-                        <tbody>
-                            {education}
-                        </tbody>
+                        {education}
                     </table>
                 ) : (
                     <div>
