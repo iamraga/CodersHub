@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { deleteEducation } from '../../actions/profileActions';
@@ -12,6 +13,7 @@ class Education extends Component {
 
     render() {
 
+        const isEducationAvailable = this.props.education.length > 0;
         const education = this.props.education.map(edu => (
             <tr key={edu._id}>
                 <td>{edu.school}</td>
@@ -26,19 +28,27 @@ class Education extends Component {
             </tr>
         ))
         return (
-            <div>
-                <h4 className="mb-4">Education Credentials</h4>
-                <table className="table">
-                    <thead>
-                        <th>School</th>
-                        <th>Degree</th>
-                        <th>Years</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        {education}
-                    </tbody>
-                </table>
+            <div className="text-center">
+                <h4 className="mb-4 text-left">Education Credentials</h4>
+                {isEducationAvailable ? (
+                    <table className="table">
+                        <thead>
+                            <th>School</th>
+                            <th>Degree</th>
+                            <th>Years</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            {education}
+                        </tbody>
+                    </table>
+                ) : (
+                    <div>
+                        <hr/>
+                        <p>Education details have not been provided</p>
+                        <Link to="/add-education" className="btn btn-info mb-3">Add Education</Link>
+                        <hr/>
+                    </div>)}
             </div>
         ) 
     }

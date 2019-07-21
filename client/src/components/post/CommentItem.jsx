@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { deleteComment } from '../../actions/postActions';
 class CommentItem extends Component {
@@ -15,13 +16,13 @@ class CommentItem extends Component {
             <div className="card card-body mb-3">
               <div className="row">
                 <div className="col-md-2">
-                  <a href={`/profile/id/${comment.user}`}>
+                    <Link to={`/profile/id/${comment.user}`} style={{'color':'#000','text-decoration':'none'}}>
                         <div className="p-3">
                             <img className="img-thumbnail rounded-circle d-none d-md-block" src={comment.avatar}
                             alt="" />
                         </div>
-                    </a>
-                    <p className="text-center">{comment.name}</p>
+                        <p className="text-center">{comment.name}</p>
+                    </Link>
                 </div>
                 <div className="col-md-10 pt-3">
                   <p className="lead">{comment.text}</p>

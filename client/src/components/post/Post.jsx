@@ -37,7 +37,7 @@ class Post extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <Link to='/feed' className="btn btn-light mb-3">
+                            <Link to='/feed' className="btn btn-info mb-3">
                                 Back to Feed
                             </Link>
                             {postContent}

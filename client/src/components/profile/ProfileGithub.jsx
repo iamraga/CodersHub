@@ -28,6 +28,7 @@ class ProfileGithub extends Component {
     }
     render() {
         const { repos } = this.state;
+        const isReposAvailable = repos.length > 0;
         const repoItems = repos.map((repo) => (
             <div key={repo.id} className="card card-body mb-2">
                 <div className="row">
@@ -54,10 +55,10 @@ class ProfileGithub extends Component {
             </div>
         ))
         return (
-            <div ref="myRef">
+            <div ref="myRef" className="mb-4 text-center">
                 <hr/>
-                <h3 className="mb-4">Latest Github Repositories</h3>
-                {repoItems}
+                <h3 className="mb-4 text-left">Latest Github Repositories</h3>
+                {(isReposAvailable) ? ({repoItems}) : <span>No Repositories available</span>}
             </div>
         )
     }
