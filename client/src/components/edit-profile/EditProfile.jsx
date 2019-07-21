@@ -99,7 +99,6 @@ class CreateProfile extends Component {
             instagram: this.state.instagram,
             youtube: this.state.youtube
         }
-        console.log(profileData);
         this.props.createProfile(profileData, this.props.history)
     }
 
