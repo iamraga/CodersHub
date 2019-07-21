@@ -124,13 +124,22 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     Profile.findOne({user: req.user.id})
         .then(profile => {
             if(profile) {
-                //Already available, So update
-                Profile.findOneAndUpdate(
-                    { user: req.user.id }, 
-                    { $set : profileFields }, 
-                    {new: true}
-                )
-                .then(profile => res.json(profile));
+                //Check if handle exists
+                Profile.findOne({ handle : profileFields.handle })
+                    .then(handleProfile => {
+                        if(handleProfile && handleProfile._id !== req.user.id) {
+                            errors.handle = "That handle already exists";
+                            res.status(400).json(errors);
+                        }
+                        //Already available, So update
+                        Profile.findOneAndUpdate(
+                            { user: req.user.id }, 
+                            { $set : profileFields }, 
+                            { new: true }
+                        )
+                        .then(profile => res.json(profile));
+                    })
+                    .catch(error => res.status(400).json({profile : "No user available!"}))
             }
             else {
                 //Check if handle exists

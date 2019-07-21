@@ -213,7 +213,7 @@ class CreateProfile extends Component {
                                     value={this.state.website}
                                     onChange={this.onChange}
                                     error={errors.website}
-                                    info="Could be your company's website or your own wrbsite"
+                                    info="Should begin with 'https://'. Could be your company's website or your own website"
                                 />
                                 <TextFieldGroup 
                                     placeholder="Location"
@@ -237,7 +237,7 @@ class CreateProfile extends Component {
                                     value={this.state.githubusername}
                                     onChange={this.onChange}
                                     error={errors.githubusername}
-                                    info="Add your github username if you want your latest github repositories"
+                                    info="Adding your GITHUB username will fetch your latest repositories to your profile"
                                 />
                                 <TextAreaFieldGroup 
                                     placeholder="Short Bio"

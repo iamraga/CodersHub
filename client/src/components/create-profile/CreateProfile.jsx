@@ -120,11 +120,14 @@ class CreateProfile extends Component {
         const options = [
             { label: '* Select Professional status', value: 0 },
             { label: 'Manager', value: 'Manager' },
-            { label: 'Junior Developer', value: 'Junior Developer' },
+            { label: 'Full Stack Developer', value: 'Full Stack Developer' },
             { label: 'Senior Developer', value: 'Senior Developer' },
+            { label: 'Junior Developer', value: 'Junior Developer' },
+            { label: 'Marketing Analyst', value: 'Marketing Analyst' },
+            { label: 'Technical Writer', value: 'Technical Writer' },
             { label: 'Quality Assurance', value: 'Quality Assurance' },
-            { label: 'Student or Learning', value: 'Student or Learning' },
             { label: 'Instructor or Teacher', value: 'Instructor or Teacher' },
+            { label: 'Student or Learning', value: 'Student or Learning' },
             { label: 'Intern', value: 'Intern' },
             { label: 'Others', value: 'Others' },
         ];
@@ -169,7 +172,7 @@ class CreateProfile extends Component {
                                     value={this.state.website}
                                     onChange={this.onChange}
                                     error={errors.website}
-                                    info="Could be your company's website or your own wrbsite"
+                                    info="Should begin with 'https://'. Could be your company's website or your own website"
                                 />
                                 <TextFieldGroup 
                                     placeholder="Location"
@@ -193,7 +196,7 @@ class CreateProfile extends Component {
                                     value={this.state.githubusername}
                                     onChange={this.onChange}
                                     error={errors.githubusername}
-                                    info="Add your github username if you want your latest github repositories"
+                                    info="Adding your GITHUB username will fetch your latest repositories to your profile"
                                 />
                                 <TextAreaFieldGroup 
                                     placeholder="Short Bio"

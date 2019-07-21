@@ -34,12 +34,12 @@ class PostItem extends Component {
             <div className="card card-body mb-3">
               <div className="row">
                 <div className="col-md-2">
-                    <a href="/">
+                    <Link to={`/profile/id/${post.user}`} style={{'color':'#000','text-decoration':'none'}}>
                         <div className="p-3">
                             <img className="img-thumbnail rounded-circle d-none d-md-block" src={post.avatar}
                             alt="" />
                         </div>
-                    </a>
+                    </Link>
                     <p className="text-center">{post.name}</p>
                 </div>
                 <div className="col-md-10 pt-3">
