@@ -27,7 +27,7 @@ class Landing extends Component {
                                 <Link to="/login" className="btn btn-lg btn-light">Login</Link>
                             </div>
                             <div className="col-md-12 text-center mt-5 pt-5">
-                                <img src={logo} class="logo" />
+                                <img src={logo} class="logo" alt="Logo" />
                             </div>
                         </div>
                     </div>
