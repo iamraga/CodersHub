@@ -122,7 +122,7 @@ class AddEducation extends Component {
                                         id="current"
                                         style={{cursor:'pointer'}}
                                     />
-                                    <label htmlFor="current" className="form-check-label">Current Job</label>
+                                    <label htmlFor="current" className="form-check-label">Currently studying</label>
                                 </div>
                                 <TextAreaFieldGroup 
                                     placeholder="Program Description"
