@@ -20,7 +20,7 @@ class ProfileGithub extends Component {
         fetch(`https://api.github.com/users/${username}/repos?per_page=${count}&sort=${sort}&clientId=${clientId}&clientSecret=${clientSecret}`)
             .then(res => res.json())
             .then(data => {
-                if(this.refs.myRefs) {
+                if(this.refs.myRef) {
                     this.setState({repos: data});
                 }
             })
@@ -42,13 +42,13 @@ class ProfileGithub extends Component {
                     </div>
                     <div className="col-md-6">
                         <span className="badge badge-info mr-1">
-                            Stars : {repos.stargazers_count}
+                            Stars : {repo.stargazers_count}
                         </span>
                         <span className="badge badge-secondary mr-1">
-                            Watchers : {repos.watchers_count}
+                            Watchers : {repo.watchers_count}
                         </span>
                         <span className="badge badge-success">
-                            Forks : {repos.forks_count}
+                            Forks : {repo.forks_count}
                         </span>
                     </div>
                 </div>
@@ -58,7 +58,13 @@ class ProfileGithub extends Component {
             <div ref="myRef" className="mb-4 text-center">
                 <hr/>
                 <h3 className="mb-4 text-left">Latest Github Repositories</h3>
-                {(isReposAvailable) ? ({repoItems}) : <span>No Repositories available</span>}
+                {
+                    (isReposAvailable) ? (
+                        <div>
+                            {repoItems}
+                        </div>
+                    ) : <span>No Repositories available</span>
+                }
             </div>
         )
     }
