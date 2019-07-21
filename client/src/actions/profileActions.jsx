@@ -7,6 +7,7 @@ export const getCurrentProfile = () => dispatch => {
     
     //Set loading status true before getting profile
     dispatch(setProfileLoading());
+    dispatch(clearErrors());
     axios.get('/api/profile')
         .then(response => 
             dispatch({
