@@ -22,7 +22,6 @@ mongoose
     .connect(db, {useNewUrlParser: true})
     .then(() => console.log("Mongo DB connected!"))
     .catch(err => console.log("Error" + err));
-app.get('/', (request, response) => response.send("Hello World!"));
 
 //Passport middleware
 app.use(passport.initialize());
