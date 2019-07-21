@@ -16,7 +16,7 @@ class CommentItem extends Component {
             <div className="card card-body mb-3">
               <div className="row">
                 <div className="col-md-2">
-                    <Link to={`/profile/id/${comment.user}`} style={{'color':'#000','text-decoration':'none'}}>
+                    <Link to={`/profile/id/${comment.user}`} style={{'color':'#000','textDecoration':'none'}}>
                         <div className="p-3">
                             <img className="img-thumbnail rounded-circle d-none d-md-block" src={comment.avatar}
                             alt="" />
